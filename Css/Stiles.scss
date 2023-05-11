@@ -1,22 +1,33 @@
+
+//Variables 
+$primary-Color:#007bff;
+$secundary-color: #0069d9;
+$tertiary-color: #fff;
+$margintop-one: 50px; 
+$padding-one: 10px;
+
+
+
 h1 {
   text-align: center;
   font-size: 36px;
-  margin-top: 50px;
-}
+  margin-top: $margintop-one;  //Uso de variable 
+} 
 
 .peliculas {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: $margintop-one; //Uso de variable 
 }
 
-.pelicula {
+.pelicula{
   width: 300px;
-  background-color: #fff;
+  background-color: $tertiary-color; //Uso de variable 
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
   margin: 20px;
   padding: 20px;
+
 }
 
 h2 {
@@ -32,8 +43,7 @@ h2 {
 
 .card-img-top {
   max-height: 350px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .card-title {
@@ -67,12 +77,13 @@ footer {
 }
 
 img {
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease; 
 }
 
 img:hover {
   transform: scale(1.2);
-}
+ }
+
 
 /* Estilos para el contenedor principal */
 #contendor {
@@ -88,35 +99,38 @@ label {
   margin-bottom: 10px;
 }
 
-input[type=text],
-input[type=email],
+input[type="text"],
+input[type="email"],
 textarea {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  margin-bottom: 20px;
+width: 100%;
+padding: $padding-one;
+border-radius: 5px;
+border: 1px solid #ccc;
+margin-bottom: 20px;
 }
 
+//Anidación de selectores.
 button {
-  background-color: #007bff;
+  background-color: #{$primary-Color}; //Uso de variable 
   color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  margin-bottom: 20px;
-  cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 20px;
+    cursor: pointer; 
+
+    &:hover{
+      background-color: $secundary-color;    //uso de variblae y anidación 
+    }
 }
-button:hover {
-  background-color: #0069d9;
-}
+
 
 #mensajes {
   margin-top: 20px;
 }
 
 .alert {
-  padding: 10px;
+  padding: $padding-one; //Uso de variable 
   border-radius: 5px;
   margin-bottom: 10px;
 }
@@ -124,28 +138,31 @@ button:hover {
 .alert-success {
   background-color: #d4edda;
   border-color: #c3e6cb;
-  color: #007bff;
+  color: $primary-Color;  //Uso de variable 
 }
 
 .alert-danger {
   background-color: #f8d7da;
   border-color: #f5c6cb;
-  color: #0069d9;
+  color: $secundary-color;  //Uso de variable 
 }
 
+//Anidación de selectores
 #contenedor-comentarios {
   margin: 20px auto;
   max-width: 600px;
-}
-#contenedor-comentarios .comentario {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 20px;
+
+  .comentario{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: $padding-one; //Uso de variable 
+    margin-bottom: 20px; 
+  }
 }
 
-.title-comentarios {
+.title-comentarios{
   text-align: center;
   color: #020202;
-  text-shadow: 2px 2px 5px gray;
-}/*# sourceMappingURL=Stiles.css.map */
+  text-shadow: 2px 2px 5px gray
+} 
+
